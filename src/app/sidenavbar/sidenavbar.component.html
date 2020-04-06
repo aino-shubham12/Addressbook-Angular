@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+        <a routerLink='/add'>Add Address</a>
+        <a routerLink='/find'>Find Address</a>
+        <a routerLink='/list'>List Address</a>
+    </div>
+
+    <span style="font-size:50px;cursor:pointer" (click)="openNav()">&#9776; </span>
+</body>
+
+</html>
+<router-outlet></router-outlet>
