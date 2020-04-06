@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<div class="row">
+    <div class="col-md-5">
+        <form [formGroup]="this.addressService.form" (ngSubmit)="onSubmit()">
+            <input type="hidden" formControlName="$key">
+            <div class="form-group">
+                <label>Person Name</label>
+                <input formControlName="Pname" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.Pname.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.Pname.errors">
+                    Please enter name</div>
+            </div>
+            <div class="form-group">
+                <label>Street Name</label>
+                <input formControlName="Street" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.Street.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.Street.errors">
+                    Please enter street</div>
+            </div>
+            <div class="form-group">
+                <label>City Name</label>
+                <input formControlName="City" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.City.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.City.errors">
+                    Please enter City</div>
+            </div>
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input formControlName="Mobile" class="form-control" maxlength="10" [ngClass]="{'is-invalid':submitted && formControls.Mobile.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.Mobile.errors">
+                    <label *ngIf="formControls.Mobile.errors.required">Please enter mob.no</label>
+                    <label *ngIf="formControls.Mobile.errors.minLength">Invalid Mobile Number</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Pincode</label>
+                <input formControlName="Pincode" class="form-control" maxlength="6" [ngClass]="{'is-invalid':submitted && formControls.Pincode.errors}">
+                <div class="invalid-feedback" *ngIf="submitted && formControls.Pincode.errors">
+                    <label *ngIf="formControls.Pincode.errors.required">Please enter pincode</label>
+                    <label *ngIf="formControls.Pincode.errors.minLength">Invalid pincode</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Add">
+            </div>
+        </form>
+        <div class="alert alert-info" *ngIf="showSuccessMessage">
+            Address added sucessfully
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="add-container">
+    <input type="text" class="form-control col-md-5" id="Pname" placeholder="Enter Name">
+    <p id="name"></p><br>
+    <input type="text" class="form-control col-md-5" id="Street" placeholder="Enter Street">
+    <p id="sname"></p><br>
+    <input type="text" class="form-control col-md-5" id="City" placeholder="Enter City">
+    <p id="cname"></p><br>
+    <input type="text" class="form-control col-md-5" id="Pincode" placeholder="Enter Pincode">
+    <p id="pin"></p><br>
+
+    <button type="submit" class="btn btn-primary" (click)="add()">Add</button>
+</div> -->

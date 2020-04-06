@@ -1,0 +1,31 @@
+<form class="form-inline">
+    <input class="form-control" name="searchInput" placeholder="Search Address into Address Book" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
+    <button class="btn btn-outline-primary" (click)="searchText=''">Clear</button>
+</form>
+<br>
+<table class="table table-sm">
+    <thead>
+        <th>Person Name</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>Mobile Number</th>
+        <th>Pincode</th>
+        <th></th>
+    </thead>
+    <ng-container *ngFor="let address of addressService.addressArray;index as i">
+        <tr class="table-dark" *ngIf="filterCondition(address)">
+            <td>{{address.Pname}}</td>
+            <td>{{address.Street}}</td>
+            <td>{{address.City}}</td>
+            <td>{{address.Mobile}}</td>
+            <td>{{address.Pincode}}</td>
+            <td>
+                <button class="btn btn-outline-info" (click)="addressService.populateForm(i,address)">Edit Address</button>
+                <button class="btn btn-outline-danger" style="margin-left:10px" (click)="onDelete(i)">Delete Address</button>
+            </td>
+        </tr>
+    </ng-container>
+</table>
+<div class="alert alert-danger" *ngIf="showDeletedMessage">
+    Address deleted successfully.
+</div>
